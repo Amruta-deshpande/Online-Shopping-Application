@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://WServer/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://WServer/">
+
+<xs:element name="getBrandInfo" type="tns:getBrandInfo"/>
+
+<xs:element name="getBrandInfoResponse" type="tns:getBrandInfoResponse"/>
+
+<xs:element name="getIdInfo" type="tns:getIdInfo"/>
+
+<xs:element name="getIdInfoResponse" type="tns:getIdInfoResponse"/>
+
+<xs:element name="getShoesInfo" type="tns:getShoesInfo"/>
+
+<xs:element name="getShoesInfoResponse" type="tns:getShoesInfoResponse"/>
+
+<xs:element name="getStockInfo" type="tns:getStockInfo"/>
+
+<xs:element name="getStockInfoResponse" type="tns:getStockInfoResponse"/>
+
+<xs:complexType name="getBrandInfo">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getBrandInfoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getIdInfo">
+<xs:sequence>
+<xs:element name="ID" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getIdInfoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getStockInfo">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getStockInfoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getShoesInfo">
+<xs:sequence>
+<xs:element name="brand" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getShoesInfoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:shoesInfo" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="shoesInfo">
+<xs:sequence>
+<xs:element name="ID" type="xs:int"/>
+<xs:element name="Size" type="xs:string" minOccurs="0"/>
+<xs:element name="Stock" type="xs:string" minOccurs="0"/>
+<xs:element name="Price" type="xs:double" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
